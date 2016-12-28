@@ -41,7 +41,6 @@ medianSpec description findMedian =
               sorted = V.modify Radix.sort values
           in findMedian values == Just (fromIntegral (sorted ! midIndex))
 
-
 prop "handles positive even number of elements" $
      \(VectorWithPositiveEven values) ->
      let len = V.length values
@@ -50,3 +49,4 @@ prop "handles positive even number of elements" $
        in findMedian values ==
           Just (averageValue (fromIntegral (sorted ! midIndex))
                              (sorted ! succ midIndex))
+     --
