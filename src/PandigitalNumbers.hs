@@ -4,8 +4,8 @@ import Data.List
 import Control.Lens
 
 pandigital :: [(Int, Int, Int)]
-pandigital = [(a, b, a+b) | a <- d3, b <- d3, a+b > 900, b > a, a+b > 999, unique [a, b, a+b]]
-  where d3 = filter (unique . return) [100..999]
+pandigital = [(a, b, a+b) | a <- v, b <- v, b > a, a+b > 999, unique [a, b, a+b]]
+  where v = filter (unique . return) [100..999]
         unique = (\x -> x == nub x) . (show =<<)
 
 smallestPandigital :: Int
