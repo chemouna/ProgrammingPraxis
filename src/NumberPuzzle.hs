@@ -10,7 +10,7 @@ gen n
     | otherwise = [1,3,7,9]
 
 solverec :: Int -> Int -> Int -> [Int] -> [Int]
-solverec b n q s 
+solverec b n q s
     | n == 11 = [q]
     | otherwise =
         trace (" -- q: " ++ show q) $
