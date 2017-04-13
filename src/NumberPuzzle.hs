@@ -1,5 +1,6 @@
 module NumberPuzzle where
 
+import Debug.Trace
 
 gen :: Int -> [Int]
 gen n
@@ -12,13 +13,15 @@ solve :: Int -> Int -> [Int] -> [Int]
 solve n k s
     | n == 11 = [k]
     | otherwise =
-        -- trace (" -- " ++ show k) $
+        trace (" -- k: " ++ show k) $
+        trace (" --- n:  " ++ show n)
         concatMap
-        (\d ->
-            let j = 10*k+d in
-               if j `mod` n /= 0 || d `elem` s
+        (\x ->
+            let j = 10 * k + x in 
+               trace (" ---- j: " ++ show j) $
+               if j `mod` n /= 0 || x `elem` s
                then []
-               else solve (n+1) j (d:s))
+               else solve (n + 1) j (x:s))
         (gen n)
 
 main :: IO ()
