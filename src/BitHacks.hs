@@ -1,4 +1,3 @@
-
 module BitHacks where
 
 import Data.Bits
@@ -13,3 +12,9 @@ negative x = testBit x (bitSize x - 1)
 
 negative' :: Int -> Bool
 negative' x = testBitDefault x ((fromJust . bitSizeMaybe $ x) - 1)
+
+sameSign :: Int -> Int -> Bool
+sameSign x1 x2 = not . negative $ xor x1 x2
+
+sameSign' :: Int -> Int -> Bool
+sameSign' = ((not . negative) .) . xor
