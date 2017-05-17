@@ -22,7 +22,9 @@ library
                      , hashable
                      , random >= 1.1
                      , haskell-docs
-                     , lens  
+                     , lens
+                     , composition
+
   default-language:    Haskell2010
 
 executable ProgrammingPraxis-exe
