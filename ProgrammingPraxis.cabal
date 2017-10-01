@@ -24,6 +24,8 @@ library
                      , haskell-docs
                      , lens
                      , composition
+                     , utility-ht
+                       
 
   default-language:    Haskell2010
 
