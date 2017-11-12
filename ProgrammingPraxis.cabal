@@ -17,15 +17,17 @@ library
   hs-source-dirs:      src
   exposed-modules:     Lib
   build-depends:       base >= 4.7 && < 5
-                     , vector >= 0.11
-                     , vector-algorithms >= 0.7.0.1
+                     , composition
+                     , containers >= 0.5.6.2
+                     , containers >= 0.5.6.2
                      , hashable
-                     , random >= 1.1
                      , haskell-docs
                      , lens
-                     , composition
+                     , random >= 1.1
                      , utility-ht
-                       
+                     , vector >= 0.11
+                     , vector-algorithms >= 0.7.0.1
+
 
   default-language:    Haskell2010
 
@@ -33,18 +35,22 @@ executable ProgrammingPraxis-exe
   hs-source-dirs:      app
   main-is:             Main.hs
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
-  build-depends:       base
-                     , ProgrammingPraxis
+  build-depends:       ProgrammingPraxis
+                     , base
+                     , containers >= 0.5.6.2
+                     , containers >= 0.5.6.2
   default-language:    Haskell2010
 
 test-suite ProgrammingPraxis-test
   type:                exitcode-stdio-1.0
   hs-source-dirs:      test
   main-is:             Spec.hs
-  build-depends:       base
-                     , ProgrammingPraxis
+  build-depends:       ProgrammingPraxis
+                     , QuickCheck >= 2.8.2
+                     , base
+                     , containers >= 0.5.6.2
+                     , containers >= 0.5.6.2
                      , hspec >= 2.2.3
-                     , QuickCheck >= 2.8.2                     
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   default-language:    Haskell2010
 
