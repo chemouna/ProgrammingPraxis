@@ -16,19 +16,23 @@ cabal-version:       >=1.10
 library
   hs-source-dirs:      src
   exposed-modules:     Lib
-  build-depends:       base >= 4.7 && < 5
+  build-depends:       array >= 0.5.1.0
+                     , array >= 0.5.1.0
+                     , base >= 4.7 && < 5
                      , composition
                      , containers >= 0.5.6.2
                      , containers >= 0.5.6.2
                      , hashable
                      , haskell-docs
                      , lens
+                     , multiset
                      , random >= 1.1
+                     , time
                      , utility-ht
                      , vector >= 0.11
                      , vector-algorithms >= 0.7.0.1
-                     , time
-                     , multiset  
+                     , QuickCheck
+
   default-language:    Haskell2010
 
 executable ProgrammingPraxis-exe
@@ -36,9 +40,13 @@ executable ProgrammingPraxis-exe
   main-is:             Main.hs
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   build-depends:       ProgrammingPraxis
+                     , array >= 0.5.1.0
+                     , array >= 0.5.1.0
                      , base
                      , containers >= 0.5.6.2
                      , containers >= 0.5.6.2
+                     , QuickCheck
+
   default-language:    Haskell2010
 
 test-suite ProgrammingPraxis-test
@@ -47,6 +55,8 @@ test-suite ProgrammingPraxis-test
   main-is:             Spec.hs
   build-depends:       ProgrammingPraxis
                      , QuickCheck >= 2.8.2
+                     , array >= 0.5.1.0
+                     , array >= 0.5.1.0
                      , base
                      , containers >= 0.5.6.2
                      , containers >= 0.5.6.2
